@@ -14,18 +14,9 @@
 
 Whether you're building an application that requires secure data storage, transmitting sensitive information, or complying with data protection regulations, Laravel Crypto has you covered.
 
-## Support us
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
-
-
-
 ## Documentation
 
-You'll find installation instructions and full documentation on [the Laravel Crypto website](https://laravel-crypto.akira.com).
+You'll find installation instructions and full documentation on [the Laravel Crypto website](https://laravel-crypto.akira-io.com).
 
 ## Changelog
 
