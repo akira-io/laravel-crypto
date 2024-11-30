@@ -12,7 +12,7 @@ return [
     | If not set, the default application key (APP_KEY) will be used.
     |
     */
-    'encryption_key' => env('CRYPTO_ENCRYPTION_KEY', "fdas"),
+    'encryption_key' => env('CRYPTO_ENCRYPTION_KEY', 'fdas'),
 
     /*
     |--------------------------------------------------------------------------
