@@ -2,6 +2,7 @@
 
 namespace Akira\LaravelCrypto;
 
+use Akira\LaravelCrypto\Console\Commands\GenerateCryptoKeyCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -11,7 +12,7 @@ class LaravelCryptoServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-crypto')
-            ->hasCommands()
+            ->hasCommand(GenerateCryptoKeyCommand::class)
             ->hasConfigFile();
     }
 
