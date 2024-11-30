@@ -11,6 +11,7 @@ class LaravelCryptoServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-crypto')
+            ->hasCommands()
             ->hasConfigFile();
     }
     
