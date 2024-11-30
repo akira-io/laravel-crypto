@@ -3,10 +3,11 @@
 namespace Akira\LaravelCrypto;
 
 use Exception;
+use Illuminate\Support\Arr;
 
 class LaravelCrypto
 {
-    public int $iterations;
+    public int $interactions;
 
     private string $algorithm;
 
@@ -14,12 +15,12 @@ class LaravelCrypto
 
     private readonly int $keySize;
 
-    public function __construct()
+    public function __construct(array $config)
     {
-        $this->algorithm = config('crypto.algorithm');
-        $this->key = config('crypto.encryption-key');
-        $this->keySize = (int) config('crypto.key_size');
-        $this->iterations = (int) config('crypto.iterations');
+        $this->algorithm = Arr::get($config, 'algorithm', 'AES-256-CBC');
+        $this->key = Arr::get($config, 'encryption_key', '');
+        $this->keySize = (int) Arr::get($config, 'key_size', 32);
+        $this->interactions = (int) Arr::get($config, 'interactions', 10000);
     }
 
     public static function make(): self
@@ -169,7 +170,7 @@ class LaravelCrypto
     {
         $key = mb_substr($this->key, 0, $this->keySize);
 
-        return hash_pbkdf2('sha256', $key, $salt, $this->iterations, $this->keySize,
+        return hash_pbkdf2('sha256', $key, $salt, $this->interactions, $this->keySize,
             true);
     }
 

@@ -12,7 +12,7 @@ return [
     | If not set, the default application key (APP_KEY) will be used.
     |
     */
-    'encryption_key' => env('CRYPTO_ENCRYPTION_KEY', env('APP_KEY')),
+    'encryption_key' => env('CRYPTO_ENCRYPTION_KEY', "fdas"),
 
     /*
     |--------------------------------------------------------------------------
@@ -70,5 +70,5 @@ return [
     | also make the encryption slower. The default is 10,000 iterations, which is a good balance.
     |
     */
-    'iterations' => env('CRYPTO_ITERATIONS', 10000),
+    'interactions' => env('CRYPTO_INTERACTIONS', 10000),
 ];
