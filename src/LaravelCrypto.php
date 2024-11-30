@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Akira\LaravelCrypto;
 
 use Exception;
 use Illuminate\Support\Arr;
 
-class LaravelCrypto
+final class LaravelCrypto
 {
     public int $interactions;
 

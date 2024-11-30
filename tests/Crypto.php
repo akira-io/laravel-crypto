@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Akira\LaravelCrypto\Facades\Crypto;
 
 beforeEach(function () {

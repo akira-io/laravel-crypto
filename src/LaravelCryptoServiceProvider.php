@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Akira\LaravelCrypto;
 
 use Akira\LaravelCrypto\Console\Commands\GenerateCryptoKeyCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelCryptoServiceProvider extends PackageServiceProvider
+final class LaravelCryptoServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Akira\LaravelCrypto\Console\Commands;
 
+use Exception;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Command\Command as CommandAlias;
 
-class GenerateCryptoKeyCommand extends Command
+final class GenerateCryptoKeyCommand extends Command
 {
     protected $signature = 'crypto:generate-key {--length=64 : The length of the key in bytes (default: 64)}';
 
@@ -32,7 +35,7 @@ class GenerateCryptoKeyCommand extends Command
             $this->line("CRYPTO_ENCRYPTION_KEY={$key}");
 
             return CommandAlias::SUCCESS;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->error('An error occurred while generating the key: '
                 .$e->getMessage());
 
