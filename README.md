@@ -19,16 +19,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 
 You can install the package via composer:
 
-```bash
-composer require akira/laravel-crypto
-```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-crypto-migrations"
-php artisan migrate
-```
 
 You can publish the config file with:
 
@@ -43,17 +34,13 @@ return [
 ];
 ```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-crypto-views"
-```
 
 ## Usage
 
 ```php
 $laravelCrypto = new Akira\LaravelCrypto();
-echo $laravelCrypto->echoPhrase('Hello, Akira!');
+echo $laravelCrypto->encrypt('Hello, Akira!');
+
 ```
 
 ## Testing
