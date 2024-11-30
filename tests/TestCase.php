@@ -2,9 +2,9 @@
 
 namespace Akira\LaravelCrypto\Tests;
 
+use Akira\LaravelCrypto\LaravelCryptoServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Akira\LaravelCrypto\LaravelCryptoServiceProvider;
 
 class TestCase extends Orchestra
 {

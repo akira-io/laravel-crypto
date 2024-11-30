@@ -1,7 +1,7 @@
 <?php
 
 return [
-    
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -13,7 +13,7 @@ return [
     |
     */
     'encryption_key' => env('CRYPTO_ENCRYPTION_KEY', env('APP_KEY')),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Algorithm
@@ -25,7 +25,7 @@ return [
     |
     */
     'algorithm' => env('CRYPTO_CIPHER', 'AES-256-CBC'),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Tag Length (for AEAD Algorithms)
@@ -37,7 +37,7 @@ return [
     |
     */
     'tag_length' => env('CRYPTO_TAG_LENGTH', 16),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Initialization Vector (IV) Length
@@ -49,7 +49,7 @@ return [
     |
     */
     'iv_length' => env('CRYPTO_IV_LENGTH', 16),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Key Size
@@ -60,7 +60,7 @@ return [
     |
     */
     'key_size' => env('CRYPTO_KEY_SIZE', 32),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Key Derivation Iterations

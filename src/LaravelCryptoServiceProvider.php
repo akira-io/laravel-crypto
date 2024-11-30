@@ -5,7 +5,6 @@ namespace Akira\LaravelCrypto;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-
 class LaravelCryptoServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
@@ -14,5 +13,4 @@ class LaravelCryptoServiceProvider extends PackageServiceProvider
             ->name('laravel-crypto')
             ->hasConfigFile();
     }
-    
 }
