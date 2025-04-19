@@ -25,7 +25,7 @@
         "laravel/pint": "^1.22",
         "nunomaduro/collision": "^8.8",
         "larastan/larastan": "^2.10",
-        "orchestra/testbench": "^9.13.0||^8.22.0",
+        "orchestra/testbench": "^9.13.0",
         "pestphp/pest": "^3.8.2",
         "pestphp/pest-plugin-arch": "^3.1.1",
         "pestphp/pest-plugin-laravel": "^3.1",
@@ -71,6 +71,6 @@
             }
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
