@@ -1,76 +1,63 @@
-name: Laravel Crypto - CI Pipeline
+name: run-tests
 
 on:
   push:
-    branches:
-      - '1.x'
-  pull_request:
-    branches:
-      - '1.x'
+    paths:
+      - '**.php'
+      - '.github/workflows/test.yml'
+      - 'phpunit.xml.dist'
+      - 'composer.json'
+      - 'composer.lock'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  install_dependencies:
-    runs-on: ubuntu-latest
-
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
     strategy:
+      fail-fast: true
       matrix:
-        php-version: [8.2, 8.3, 8.4]
-        laravel-version: ['11.*', '12.*']
+        os: [ubuntu-latest, windows-latest]
+        php: [8.4, 8.3, 8.2]
+        laravel: [12.*, 11.*, 10.*]
+        stability: [prefer-lowest, prefer-stable]
+        include:
+          - laravel: 12.*
+            testbench: 10.*
+          - laravel: 11.*
+            testbench: 9.*
+          - laravel: 10.*
+            testbench: 8.*
+
+
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
     steps:
-      - name: Check out the repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # Set up PHP with the matrix version
-      - name: Set up PHP ${{ matrix.php-version }}
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
-          extensions: mbstring, bcmath, openssl
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+          coverage: none
 
-      # Install Composer
-      - name: Install Composer
+      - name: Setup problem matchers
         run: |
-          curl -sS https://getcomposer.org/installer | php
-          php composer.phar --version
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      # Clear Composer cache to prevent issues with old packages
-      - name: Clear Composer cache
-        run: composer clear-cache
-
-      # Install dependencies with the Laravel version from the matrix
-      - name: Install dependencies for Laravel ${{ matrix.laravel-version }}
+      - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel-version }}" --no-interaction --prefer-dist
-          composer install --no-interaction --prefer-dist --dev
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
-  run_tests:
-    runs-on: ubuntu-latest
-    needs: install_dependencies
+      - name: List Installed Dependencies
+        run: composer show -D
 
-    strategy:
-      matrix:
-        php-version: [8.2, 8.3, 8.4]
-        laravel-version: ['11.*', '12.*']
-
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
-
-      # Set up PHP with the matrix version
-      - name: Set up PHP ${{ matrix.php-version }} for testing
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
-          extensions: mbstring, bcmath, openssl
-
-      # Install Laravel dependencies
-      - name: Install dependencies for Laravel ${{ matrix.laravel-version }}
-        run: |
-          composer require "laravel/framework:${{ matrix.laravel-version }}" --no-interaction --prefer-dist
-          composer install --no-interaction --prefer-dist --dev
-
-      # Run tests with Pest
-      - name: Run tests with Pest
-        run: |
-          composer test
+      - name: Execute tests
+        run: composer test
