@@ -9,7 +9,7 @@ on:
       - '1.x'
 
 jobs:
-  install_dependencies:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -44,7 +44,7 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel-version }}" --no-interaction --prefer-dist
           composer install --no-interaction --prefer-dist --dev
 
-      # Run tests with Pest
-      - name: Run tests with Pest
+      # Run tests
+      - name: Run tests
         run: |
           composer test

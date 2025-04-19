@@ -52,11 +52,26 @@
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
+        "lint": "pint",
+        "refactor": "rector",
+        "test:lint": "pint --test",
+        "test:refactor": "rector --dry-run",
+        "test:types": "phpstan",
+        "test:arch": "pest --filter=arch",
+        "test:type-coverage": "pest --type-coverage --min=100 --compact",
+        "test:coverage": "pest --parallel --coverage --compact --exactly=5.8",
+        "test:typos": "peck",
+        "test": [
+            "@test:lint",
+            "@test:refactor",
+            "@test:typos",
+            "@test:arch",
+            "@test:types",
+            "@test:type-coverage",
+            "@test:coverage"
+        ]
     },
+
     "config": {
         "sort-packages": true,
         "allow-plugins": {
