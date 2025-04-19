@@ -1,5 +1,12 @@
 
 
+## [0.1.1](https://github.com/akira-io/laravel-crypto/compare/0.1.0...0.1.1) (2025-04-19)
+
+
+### Bug Fixes
+
+* correct documentation URL in README ([9ac40d3](https://github.com/akira-io/laravel-crypto/commit/9ac40d377b9ac432f466fe80014a4a77fa994860))
+
 ## 0.1.0 (2024-11-30)
 
 * Fix styling ([2b8dd87](https://github.com/akira-io/laravel-crypto/commit/2b8dd87))
