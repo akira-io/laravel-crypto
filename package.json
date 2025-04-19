@@ -48,7 +48,7 @@
 
         "infile": "CHANGELOG.md",
 
-        "preset": "conventionalcommits",
+        "preset": "angular",
 
         "types": {
 
