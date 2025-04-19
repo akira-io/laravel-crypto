@@ -15,12 +15,13 @@ jobs:
     strategy:
       matrix:
         php-version: [8.2, 8.3, 8.4]
+        laravel-version: ['11.*', '12.*']
 
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      # Setup PHP with the matrix version
+      # Set up PHP with the matrix version
       - name: Set up PHP ${{ matrix.php-version }}
         uses: shivammathur/setup-php@v2
         with:
@@ -37,30 +38,39 @@ jobs:
       - name: Clear Composer cache
         run: composer clear-cache
 
-      # Install Composer dependencies
-      - name: Install dependencies with Composer
+      # Install dependencies with the Laravel version from the matrix
+      - name: Install dependencies for Laravel ${{ matrix.laravel-version }}
         run: |
+          composer require "laravel/framework:${{ matrix.laravel-version }}" --no-interaction --prefer-dist
           composer install --no-interaction --prefer-dist --dev
 
   run_tests:
     runs-on: ubuntu-latest
     needs: install_dependencies
+
     strategy:
       matrix:
         php-version: [8.2, 8.3, 8.4]
+        laravel-version: ['11.*', '12.*']
+
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      # Setup PHP again to run tests with the matrix PHP version
+      # Set up PHP with the matrix version
       - name: Set up PHP ${{ matrix.php-version }} for testing
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
           extensions: mbstring, bcmath, openssl
 
+      # Install Laravel dependencies
+      - name: Install dependencies for Laravel ${{ matrix.laravel-version }}
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel-version }}" --no-interaction --prefer-dist
+          composer install --no-interaction --prefer-dist --dev
+
       # Run tests with Pest
       - name: Run tests with Pest
         run: |
-          composer install --no-interaction --prefer-dist --dev
-          vendor/bin/pest
+          composer test
