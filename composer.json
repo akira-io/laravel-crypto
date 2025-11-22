@@ -60,7 +60,6 @@
             "@test:lint",
             "@test:refactor",
             "@test:arch"
-
         ]
     },
 
