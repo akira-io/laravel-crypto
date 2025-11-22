@@ -1,5 +1,12 @@
 
 
+# [0.2.0](https://github.com/akira-io/laravel-crypto/compare/0.1.1...0.2.0) (2025-11-22)
+
+
+### Features
+
+* add crypto helper function and corresponding tests ([f31dd96](https://github.com/akira-io/laravel-crypto/commit/f31dd96f86f92595a68290897c801356903a3faa))
+
 ## [0.1.1](https://github.com/akira-io/laravel-crypto/compare/0.1.0...0.1.1) (2025-04-19)
 
 
