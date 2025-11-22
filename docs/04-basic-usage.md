@@ -41,7 +41,27 @@ class UserService
 }
 ```
 
-### Using the Helper (via Container)
+### Using the Helper Function (Recommended)
+
+The helper function provides full IDE autocomplete support:
+
+```php
+// Simple and clean with autocomplete
+$encrypted = crypto()->encrypt('sensitive data');
+$decrypted = crypto()->decrypt($encrypted);
+
+// IDE will autocomplete all methods
+$key = crypto()->getKey();
+$algorithm = crypto()->getAlgorithm();
+```
+
+**Why use the helper?**
+- ✅ Full IDE autocomplete support
+- ✅ Clean and readable syntax
+- ✅ No need to import facade or class
+- ✅ Type hints work perfectly
+
+### Using the Container (Alternative)
 
 ```php
 $crypto = app(\Akira\LaravelCrypto\LaravelCrypto::class);

@@ -9,11 +9,12 @@ Welcome to the complete documentation for **Laravel Crypto**, a powerful Laravel
 3. [Configuration](03-configuration.md)
 4. [Basic Usage](04-basic-usage.md)
 5. [Advanced Usage](05-advanced-usage.md)
-6. [API Reference](07-api-reference.md)
-7. [Examples](06-examples.md)
+6. [Examples](06-examples.md)
+7. [API Reference](07-api-reference.md)
 8. [Security Best Practices](08-security-best-practices.md)
 9. [Troubleshooting](09-troubleshooting.md)
 10. [FAQ](10-faq.md)
+11. [Helper Function Usage](11-helper-usage.md) ⭐ **Recommended**
 
 ## Quick Links
 
@@ -44,10 +45,13 @@ php artisan crypto:generate-key
 ### Basic Encryption
 
 ```php
-use Akira\LaravelCrypto\Facades\Crypto;
+// Using helper function (recommended - has IDE autocomplete)
+$encrypted = crypto()->encrypt('Hello World');
+$decrypted = crypto()->decrypt($encrypted);
 
+// Or using facade
+use Akira\LaravelCrypto\Facades\Crypto;
 $encrypted = Crypto::encrypt('Hello World');
-$decrypted = Crypto::decrypt($encrypted);
 ```
 
 ## Features

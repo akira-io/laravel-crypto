@@ -14,9 +14,46 @@
 
 Whether you're building an application that requires secure data storage, transmitting sensitive information, or complying with data protection regulations, Laravel Crypto has you covered.
 
+## Quick Start
+
+### Installation
+
+```bash
+composer require akira/laravel-crypto
+```
+
+### Generate Key
+
+```bash
+php artisan crypto:generate-key
+```
+
+Add to your `.env`:
+```env
+CRYPTO_ENCRYPTION_KEY=your-generated-key-here
+```
+
+### Usage
+
+```php
+// Using helper function (recommended - has IDE autocomplete ⭐)
+$encrypted = crypto()->encrypt('Hello World');
+$decrypted = crypto()->decrypt($encrypted);
+
+// Or using facade
+use Akira\LaravelCrypto\Facades\Crypto;
+$encrypted = Crypto::encrypt('Hello World');
+$decrypted = Crypto::decrypt($encrypted);
+```
+
 ## Documentation
 
-You'll find installation instructions and full documentation on [the Laravel Crypto website](https://laravel-crypto.akira-io.com).
+- 📖 [Complete Documentation](docs/00-index.md)
+- ⭐ [Helper Function Usage](docs/11-helper-usage.md) - **Recommended with IDE autocomplete**
+- 🚀 [Quick Start Guide](docs/01-introduction.md)
+- 📝 [API Reference](docs/07-api-reference.md)
+- 💡 [Examples](docs/06-examples.md)
+- 🔒 [Security Best Practices](docs/08-security-best-practices.md)
 
 ## Changelog
 
