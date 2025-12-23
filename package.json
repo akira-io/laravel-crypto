@@ -48,6 +48,8 @@
 
         "infile": "CHANGELOG.md",
 
+        "header": "# Changelog\n\nAll notable changes to `laravel-crypto` will be documented in this file.\n",
+
         "preset": "angular",
 
         "types": {

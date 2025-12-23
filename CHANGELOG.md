@@ -28,7 +28,3 @@
 * feat: add crypto key generation command ([3865558](https://github.com/akira-io/laravel-crypto/commit/3865558))
 * feat: register GenerateCryptoKeyCommand in service provider ([fb9d5f3](https://github.com/akira-io/laravel-crypto/commit/fb9d5f3))
 * feat: start laravel crypto ([c7065d9](https://github.com/akira-io/laravel-crypto/commit/c7065d9))
-
-# Changelog
-
-All notable changes to `laravel-crypto` will be documented in this file.
