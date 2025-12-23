@@ -1,4 +1,14 @@
+# Changelog
 
+All notable changes to `laravel-crypto` will be documented in this file.
+
+
+## [0.2.1](https://github.com/akira-io/laravel-crypto/compare/0.2.0...0.2.1) (2025-12-23)
+
+
+### Bug Fixes
+
+* remove unnecessary whitespace in LaravelCryptoServiceProvider ([0b7b54d](https://github.com/akira-io/laravel-crypto/commit/0b7b54da11203a03223fd8b79dd672fcbbf44fb8))
 
 # [0.2.0](https://github.com/akira-io/laravel-crypto/compare/0.1.1...0.2.0) (2025-11-22)
 
