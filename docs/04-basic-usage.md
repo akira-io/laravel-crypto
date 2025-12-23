@@ -484,3 +484,5 @@ function encryptIfNeeded($value) {
 - [Explore advanced usage](05-advanced-usage.md)
 - [See practical examples](06-examples.md)
 - [Learn about security best practices](08-security-best-practices.md)
+
+**Previous:** [Configuration](03-configuration.md) | **Next:** [Advanced Usage](05-advanced-usage.md)

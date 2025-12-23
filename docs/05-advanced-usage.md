@@ -759,3 +759,5 @@ class LazyEncryptedValue
 - [See practical examples](06-examples.md)
 - [Learn security best practices](08-security-best-practices.md)
 - [Check API reference](07-api-reference.md)
+
+**Previous:** [Basic Usage](04-basic-usage.md) | **Next:** [Examples](06-examples.md)

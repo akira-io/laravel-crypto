@@ -559,7 +559,9 @@ Check the package repository for commercial support options or contact the maint
 
 ## Next Steps
 
-- [Read the full documentation](00-index.md)
 - [See practical examples](06-examples.md)
 - [Learn security best practices](08-security-best-practices.md)
 - [Check troubleshooting guide](09-troubleshooting.md)
+- [Helper Function Usage](11-helper-usage.md)
+
+**Previous:** [Troubleshooting](09-troubleshooting.md) | **Next:** [Helper Function Usage](11-helper-usage.md)

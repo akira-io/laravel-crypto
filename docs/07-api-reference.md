@@ -572,3 +572,5 @@ Approximate operations per second (on typical hardware):
 - [See practical examples](06-examples.md)
 - [Learn security best practices](08-security-best-practices.md)
 - [Troubleshooting guide](09-troubleshooting.md)
+
+**Previous:** [Examples](06-examples.md) | **Next:** [Security Best Practices](08-security-best-practices.md)

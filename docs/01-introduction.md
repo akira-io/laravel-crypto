@@ -8,17 +8,17 @@
 
 While Laravel includes built-in encryption capabilities, Laravel Crypto offers:
 
-### 🔐 Enhanced Security
+### Enhanced Security
 - **PBKDF2 Key Derivation**: Derives encryption keys using PBKDF2 (Password-Based Key Derivation Function 2) with configurable iterations
 - **Randomized IVs**: Every encryption operation uses a unique, randomly generated initialization vector
 - **Separate Encryption Keys**: Use different keys from your application key for specific encryption needs
 
-### ⚙️ Flexibility
+###  Flexibility
 - **Multiple Algorithm Support**: Configure different encryption algorithms (AES-256-CBC, AES-128-CBC, etc.)
 - **Customizable Parameters**: Fine-tune key sizes, iteration counts, and algorithm choices
 - **Runtime Configuration**: Change encryption settings on-the-fly
 
-### 🚀 Developer-Friendly
+### Developer-Friendly
 - **Facade Support**: Simple, expressive syntax using Laravel facades
 - **Service Container Integration**: Fully integrated with Laravel's dependency injection
 - **Artisan Commands**: Generate secure keys directly from the command line
@@ -91,3 +91,5 @@ Laravel Crypto consists of:
 - [Configure the package](03-configuration.md)
 - [Learn basic usage](04-basic-usage.md)
 - [Explore advanced features](05-advanced-usage.md)
+
+**Previous:** [Roadmap](00-roadmap.md) | **Next:** [Installation](02-installation.md)

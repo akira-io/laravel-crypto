@@ -259,3 +259,5 @@ rm config/crypto.php
 - [Configure Laravel Crypto](03-configuration.md)
 - [Learn basic usage](04-basic-usage.md)
 - [Explore examples](06-examples.md)
+
+**Previous:** [Introduction](01-introduction.md) | **Next:** [Configuration](03-configuration.md)

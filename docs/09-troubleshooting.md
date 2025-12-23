@@ -734,3 +734,5 @@ If you can't resolve the issue:
 - [Review security best practices](08-security-best-practices.md)
 - [Check FAQ](10-faq.md)
 - [API Reference](07-api-reference.md)
+
+**Previous:** [Security Best Practices](08-security-best-practices.md) | **Next:** [FAQ](10-faq.md)

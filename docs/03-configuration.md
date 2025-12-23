@@ -386,3 +386,5 @@ CRYPTO_CIPHER=AES-128-CBC
 - [Learn basic usage](04-basic-usage.md)
 - [Explore advanced features](05-advanced-usage.md)
 - [See practical examples](06-examples.md)
+
+**Previous:** [Installation](02-installation.md) | **Next:** [Basic Usage](04-basic-usage.md)

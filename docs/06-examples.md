@@ -875,3 +875,5 @@ $record = PatientRecord::create([
 - [Learn security best practices](08-security-best-practices.md)
 - [Check API reference](07-api-reference.md)
 - [Troubleshooting guide](09-troubleshooting.md)
+
+**Previous:** [Advanced Usage](05-advanced-usage.md) | **Next:** [API Reference](07-api-reference.md)

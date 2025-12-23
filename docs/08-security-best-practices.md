@@ -708,3 +708,5 @@ $logs = DB::table('data_access_logs')
 - [Check API reference](07-api-reference.md)
 - [Troubleshooting guide](09-troubleshooting.md)
 - [FAQ](10-faq.md)
+
+**Previous:** [API Reference](07-api-reference.md) | **Next:** [Troubleshooting](09-troubleshooting.md)

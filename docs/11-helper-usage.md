@@ -579,3 +579,5 @@ crypto()->
 - [See more examples](06-examples.md)
 - [Advanced usage patterns](05-advanced-usage.md)
 - [API reference](07-api-reference.md)
+
+**Previous:** [FAQ](10-faq.md)
