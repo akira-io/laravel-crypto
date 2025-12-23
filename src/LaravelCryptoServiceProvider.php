@@ -28,7 +28,7 @@ final class LaravelCryptoServiceProvider extends PackageServiceProvider
     public function boot(): void
     {
         parent::boot();
-        
+
         if (file_exists($file = __DIR__.'/helpers.php')) {
             require $file;
         }
