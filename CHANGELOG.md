@@ -3,6 +3,15 @@
 All notable changes to `laravel-crypto` will be documented in this file.
 
 
+# [0.3.0](https://github.com/akira-io/laravel-crypto/compare/0.2.1...0.3.0) (2026-02-25)
+
+
+### Features
+
+* add support for Laravel 11 and update testbench configurations in run-tests.yml ([5ee28be](https://github.com/akira-io/laravel-crypto/commit/5ee28be77c0c8718e5e21333123e4abc017664d1))
+* add support for Laravel 13 and update dependencies in composer.json and run-tests.yml ([5c8ad2b](https://github.com/akira-io/laravel-crypto/commit/5c8ad2b2a5cf4468115bbef9d5b79a49d95b48be))
+* update minimum stability to dev and enhance CI configuration for Laravel 13 support ([0da1e54](https://github.com/akira-io/laravel-crypto/commit/0da1e5484b23e703acee61f0a1939f6ec6f2742c))
+
 ## [0.2.1](https://github.com/akira-io/laravel-crypto/compare/0.2.0...0.2.1) (2025-12-23)
 
 
