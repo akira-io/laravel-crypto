@@ -1,51 +1,56 @@
-name: Laravel Crypto - CI Pipeline
+name: Tests
 
 on:
   push:
-    branches:
-      - '1.x'
+    branches: [ 1.x ]
   pull_request:
-    branches:
-      - '1.x'
+    branches: [ 1.x ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
     strategy:
+      fail-fast: true
       matrix:
-        php-version: [8.2, 8.3, 8.4]
-        laravel-version: ['11.*', '12.*']
+        php: [ '8.2', '8.3', '8.4', '8.5' ]
+        laravel: [ '^11.0','^12.0', '^13.0' ]
+        dependency-version: [ 'prefer-stable' ]
+        include:
+          - laravel: '^13.0'
+            testbench: '11.*'
+          - laravel: '^12.0'
+            testbench: '10.*'
+          - laravel: '^11.0'
+            testbench: '9.*'
+        exclude:
+          - laravel: '^13.0'
+            php: '8.2'
+          - laravel: '^11.0'
+            php: '8.5'
+
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
     steps:
-      - name: Check out the repository
+      - name: Checkout code
         uses: actions/checkout@v6
 
-      # Set up PHP with the matrix version
-      - name: Set up PHP ${{ matrix.php-version }}
+      - name: Install Aspell
+        shell: bash
+        run: sudo apt-get update && sudo apt-get install -y aspell aspell-en
+
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
-          extensions: mbstring, bcmath, openssl, xdebug
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
           coverage: xdebug
+          tools: composer:v2
 
-      # Install Composer
-      - name: Install Composer
+      - name: Install Composer dependencies
         run: |
-          curl -sS https://getcomposer.org/installer | php
-          php composer.phar --version
+          composer require "illuminate/contracts:${{ matrix.laravel }}" --no-interaction --no-update
+          composer require --dev "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
-      # Clear Composer cache to prevent issues with old packages
-      - name: Clear Composer cache
-        run: composer clear-cache
-
-      # Install dependencies with the Laravel version from the matrix
-      - name: Install dependencies for Laravel ${{ matrix.laravel-version }}
-        run: |
-          composer require "laravel/framework:${{ matrix.laravel-version }}" --no-interaction --prefer-dist
-          composer install --no-interaction --prefer-dist --dev
-
-      # Run tests
-      - name: Run tests
-        run: |
-          composer test
+      - name: Run tests (Pest)
+        run: composer test
