@@ -1,9 +1,12 @@
-# Laravel Crypto
+![img.png](img.png)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/akira/laravel-crypto.svg?style=flat-square)](https://packagist.org/packages/akira/laravel-crypto)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/akira/laravel-crypto/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/akira/laravel-crypto/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/akira/laravel-crypto/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/akira/laravel-crypto/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/akira/laravel-crypto.svg?style=flat-square)](https://packagist.org/packages/akira/laravel-crypto)
+<p align="center">
+  <a href="https://packagist.org/packages/akira/laravel-crypto"><img src="https://img.shields.io/packagist/v/akira/laravel-crypto.svg?style=flat-square" alt="Latest Version on Packagist"></a>
+  <a href="https://github.com/akira-io/laravel-crypto/actions?query=workflow%3Arun-tests+branch%3A1.x"><img src="https://img.shields.io/github/actions/workflow/status/akira-io/laravel-crypto/run-tests.yml?branch=1.x&label=tests&style=flat-square" alt="GitHub Tests"></a>
+  <a href="https://packagist.org/packages/akira/laravel-crypto"><img src="https://img.shields.io/packagist/dt/akira/laravel-crypto.svg?style=flat-square" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/akira/laravel-crypto"><img src="https://img.shields.io/packagist/php-v/akira/laravel-crypto.svg?style=flat-square" alt="PHP Version"></a>
+  <a href="https://github.com/akira-io/laravel-crypto/blob/1.x/LICENSE.md"><img src="https://img.shields.io/github/license/akira-io/laravel-crypto.svg?style=flat-square" alt="License"></a>
+</p>
 
 `Laravel Crypto` is a Laravel package designed to make encryption and decryption straightforward. It supports:
 
